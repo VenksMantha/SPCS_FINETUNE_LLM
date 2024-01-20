@@ -1,0 +1,11 @@
+{
+  "account"   : "<account-locator>",
+  "user"      : "<username>",
+  "password"  : "<password>",
+  "role"      : "<role_name>",
+  "warehouse" : "<warehouse_name>",
+  "database"  : "<database_name>",
+  "schema"    : "<schema_name>",
+  "compute_pool" : "<compute_pool>",
+  "huggingface_token": "<your_token>"
+}

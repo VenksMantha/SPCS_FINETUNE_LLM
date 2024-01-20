@@ -1,0 +1,23 @@
+spec:
+  container:  
+  - name: llm-finetune-hol
+    image: <Org_Name>-<Account_Name>.registry.snowflakecomputing.com/llm_finetune_db/hol/llm_repo/llm-finetune-hol
+    volumeMounts: 
+    - name: llm-workspace
+      mountPath: /notebooks/llm-workspace
+    env:
+      SNOWFLAKE_MOUNTED_STAGE_PATH: /notebooks/llm-workspace
+    resources:                         
+        requests:
+          nvidia.com/gpu: 1
+        limits:
+          nvidia.com/gpu: 1
+  endpoint:
+  - name: llm-finetune-hol
+    port: 8888
+    public: true
+  volume:
+  - name: llm-workspace
+    source: "@llm_workspace_stage"
+    uid: 0
+    gid: 0
